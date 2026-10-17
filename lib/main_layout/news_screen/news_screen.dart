@@ -14,15 +14,20 @@ class NewsScreen extends StatefulWidget {
 class _NewsScreenState extends State<NewsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CustomTabBar(),
-        Expanded(
-          child: ListView.builder(
-          itemCount: ArticleModel.articles.length
-          ,itemBuilder: (context,index)=> ArticleItem(article: ArticleModel.articles[index],)),
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          CustomTabBar(),
+          SizedBox(height: 16,),
+          Expanded(
+            child: ListView.separated(
+              separatorBuilder: (context,index)=> SizedBox(height: 16,),
+            itemCount: ArticleModel.articles.length
+            ,itemBuilder: (context,index)=> ArticleItem(article: ArticleModel.articles[index],)),
+          )
+        ],
+      ),
     );
   }
 }

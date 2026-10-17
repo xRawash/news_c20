@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news/core/colors_manager.dart';
 import 'package:news/models/article_model.dart';
+import 'package:news/providers/config_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class ArticleItem extends StatelessWidget {
@@ -8,11 +10,12 @@ class ArticleItem extends StatelessWidget {
   ArticleModel article;
   @override
   Widget build(BuildContext context) {
+    ConfigProvider configProvider = Provider.of<ConfigProvider>(context);
     return Container(
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: ColorsManager.white),
+        border: Border.all(color: configProvider.isDark? ColorsManager.white : ColorsManager.black),
       ),
       child:Column(
         children: [

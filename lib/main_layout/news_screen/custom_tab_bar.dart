@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news/core/colors_manager.dart';
 import 'package:news/models/sources_model.dart';
 
 class CustomTabBar extends StatefulWidget {
@@ -16,12 +15,9 @@ class _CustomTabBarState extends State<CustomTabBar> {
       length: SourcesModel.sources.length,
       child: TabBar(
         tabs: SourcesModel.sources.map((e) => Tab(text: e.name)).toList(),
-        indicatorColor: ColorsManager.white,
-        labelColor: ColorsManager.white,
-        unselectedLabelColor: Colors.grey,
-        indicatorSize: TabBarIndicatorSize.tab,
         isScrollable: true,
-        tabAlignment: TabAlignment.start,
+        labelStyle: Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
+        unselectedLabelStyle: Theme.of(context).textTheme.titleSmall,
       ),
     );
   }

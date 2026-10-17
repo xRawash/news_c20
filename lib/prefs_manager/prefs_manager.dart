@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+class PrefsManager {
+  static late SharedPreferences prefs;
+  static Future<void> init() async {
+    prefs = await SharedPreferences.getInstance();
+  }
+
+  static void saveCurrentTheme(ThemeMode currentTheme){
+    String theme = currentTheme == ThemeMode.dark ? "Dark" : "Light";
+    prefs.setString('current_theme', theme);
+  }
+  static ThemeMode? getSavedTheme(){
+    String? savedTheme = prefs.getString('current_theme');
+    if(savedTheme == 'Light'){
+      return ThemeMode.light;
+    } else if(savedTheme == 'Dark'){
+      return ThemeMode.dark;
+    }
+    return null;
+  }
+  static void saveCurrentLanguage(String currentLanguage) async {
+    prefs.setString('current_language', currentLanguage);
+  }
+
+  static String? getSavedLanguage() {
+    return prefs.getString('current_language');
+  }
+}

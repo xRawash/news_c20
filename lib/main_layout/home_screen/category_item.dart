@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news/core/colors_manager.dart';
+import 'package:news/l10n/app_localizations.dart';
+import 'package:news/providers/config_provider.dart';
+import 'package:provider/provider.dart';
 
 class CategoryItem extends StatefulWidget {
   CategoryItem({
@@ -24,6 +27,8 @@ class _CategoryItemState extends State<CategoryItem> {
 
   @override
   Widget build(BuildContext context) {
+    ConfigProvider configProvider = Provider.of<ConfigProvider>(context);
+    AppLocalizations localizations = AppLocalizations.of(context)!;
     return InkWell(
       onTap: widget.onTap,
       child: Container(
@@ -31,7 +36,7 @@ class _CategoryItemState extends State<CategoryItem> {
         height: 199,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
-          color: ColorsManager.white,
+          color: configProvider.isDark? ColorsManager.white : ColorsManager.black,
         ),
         child: Row(
           textDirection: isEven ? TextDirection.ltr : TextDirection.rtl,
@@ -51,7 +56,7 @@ class _CategoryItemState extends State<CategoryItem> {
                 children: [
                   Text(
                     widget.title,
-                    style: Theme.of(context).textTheme.displayLarge?.copyWith(color: ColorsManager.black),
+                    style: Theme.of(context).textTheme.displayLarge,
                   ),
                   Container(
                     decoration: BoxDecoration(
@@ -66,22 +71,19 @@ class _CategoryItemState extends State<CategoryItem> {
                             vertical: 9,
                           ),
                           child: Text(
-                            "View All",
-                            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                              color: ColorsManager.white,
-                              fontWeight: FontWeight.w500,
-                            ),
+                            localizations.viewAll,
+                            style: Theme.of(context).textTheme.headlineMedium,
                           ),
                         ),
                         Container(
                           padding: EdgeInsets.all(15),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10000),
-                            color: ColorsManager.black,
+                            color: configProvider.isDark? ColorsManager.black: ColorsManager.white,
                           ),
                           child: Icon(
                             Icons.arrow_forward_ios_rounded,
-                            color: ColorsManager.white,
+                            color: configProvider.isDark? ColorsManager.white : ColorsManager.black,
                           ),
                         ),
                       ],

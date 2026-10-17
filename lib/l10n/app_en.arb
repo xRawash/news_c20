@@ -1,0 +1,22 @@
+{
+  "newsApp": "News App",
+  "home": "Home",
+  "goToHome": "Go To Home",
+  "theme": "Theme",
+  "language": "Language",
+  "dark": "Dark",
+  "light": "Light",
+  "english": "English",
+  "arabic": "Arabic",
+  "goodMorning": "Good Morning\nHere is Some News For You",
+  "viewAll": "View All",
+  "search": "Search",
+  "by": "By",
+  "general": "General",
+  "business": "Business",
+  "sports": "Sports",
+  "technology": "Technology",
+  "entertainment": "Entertainment",
+  "health": "Health",
+  "science": "Science"
+}

@@ -4,6 +4,57 @@ import 'package:news/core/colors_manager.dart';
 class ThemeManager {
   static final ThemeData light = ThemeData(
     scaffoldBackgroundColor: ColorsManager.white,
+    appBarTheme: AppBarTheme(
+      backgroundColor: ColorsManager.white,
+      centerTitle: true,
+      titleTextStyle: TextStyle(
+        color: ColorsManager.black,
+        fontSize: 24,
+        fontWeight: FontWeight.w400,
+      ),
+      foregroundColor: ColorsManager.black,
+    ),
+    drawerTheme: DrawerThemeData(backgroundColor: ColorsManager.black),
+    tabBarTheme: TabBarThemeData(
+      indicatorColor: ColorsManager.black,
+      labelColor: ColorsManager.black,
+      unselectedLabelColor: Colors.grey,
+      indicatorSize: TabBarIndicatorSize.tab,
+      dividerColor: Colors.transparent,
+      tabAlignment: TabAlignment.start,
+    ),
+    textTheme: TextTheme(
+      displayLarge: TextStyle(
+        fontSize: 30,
+        fontWeight: FontWeight.w500,
+        color: ColorsManager.white,
+      ),
+      headlineMedium: TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        color: ColorsManager.black,
+      ),
+      titleLarge: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        color: ColorsManager.white,
+      ),
+      titleMedium: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w500,
+        color: ColorsManager.white,
+      ),
+      bodyLarge: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: ColorsManager.black,
+      ),
+      bodyMedium: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+        color: ColorsManager.black,
+      ),
+    ),
   );
 
   static final ThemeData dark = ThemeData(
@@ -19,11 +70,19 @@ class ThemeManager {
       foregroundColor: ColorsManager.white,
     ),
     drawerTheme: DrawerThemeData(backgroundColor: ColorsManager.black),
+    tabBarTheme: TabBarThemeData(
+      indicatorColor: ColorsManager.white,
+      labelColor: ColorsManager.white,
+      unselectedLabelColor: Colors.grey,
+      indicatorSize: TabBarIndicatorSize.tab,
+      dividerColor: Colors.transparent,
+      tabAlignment: TabAlignment.start,
+    ),
     textTheme: TextTheme(
       displayLarge: TextStyle(
         fontSize: 30,
         fontWeight: FontWeight.w500,
-        color: ColorsManager.white,
+        color: ColorsManager.black,
       ),
       headlineMedium: TextStyle(
         fontSize: 24,
