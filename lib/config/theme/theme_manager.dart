@@ -7,5 +7,16 @@ class ThemeManager {
   );
   static final ThemeData dark = ThemeData(
     scaffoldBackgroundColor: ColorsManager.black,
+    appBarTheme: AppBarTheme(
+      backgroundColor: ColorsManager.black,
+      centerTitle: true,
+      titleTextStyle: TextStyle(
+        color: ColorsManager.white,
+        fontSize: 24,
+        fontWeight: FontWeight.w400,
+      ),
+      foregroundColor: ColorsManager.white,
+    ),
+    drawerTheme: DrawerThemeData(backgroundColor: ColorsManager.black),
   );
 }

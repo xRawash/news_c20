@@ -7,8 +7,9 @@ class RoutesManager {
 
   static Route? getRoute(RouteSettings settings) {
     switch(settings.name){
-      case mainLayout:
+      case mainLayout:{
         return MaterialPageRoute(builder: (_) => const MainScreen());
+      }
       default:
         return null;
     }
