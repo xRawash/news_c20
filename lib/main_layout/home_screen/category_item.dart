@@ -51,7 +51,7 @@ class _CategoryItemState extends State<CategoryItem> {
                 children: [
                   Text(
                     widget.title,
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
+                    style: Theme.of(context).textTheme.displayLarge?.copyWith(color: ColorsManager.black),
                   ),
                   Container(
                     decoration: BoxDecoration(
@@ -67,9 +67,8 @@ class _CategoryItemState extends State<CategoryItem> {
                           ),
                           child: Text(
                             "View All",
-                            style: TextStyle(
+                            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                               color: ColorsManager.white,
-                              fontSize: 24,
                               fontWeight: FontWeight.w500,
                             ),
                           ),

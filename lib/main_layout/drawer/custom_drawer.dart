@@ -22,7 +22,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
             child: Center(
               child: Text(
                 "News App",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: ColorsManager.black),
               ),
             ),
           ),
@@ -33,7 +33,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
             leading: Icon(Icons.home),
             title: Text(
               "Go To Home",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
           Divider(thickness: 2, indent: 16, endIndent: 16),
@@ -47,7 +47,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   children: [
                     Icon(Icons.format_paint_outlined, color: ColorsManager.white,),
                     SizedBox(width: 16,),
-                    Text("Theme", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500,color: ColorsManager.white)),
+                    Text("Theme", style: Theme.of(context).textTheme.titleMedium),
                   ],
                 ),
                 DropdownMenu(
@@ -72,7 +72,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   children: [
                     Icon(Icons.language, color: ColorsManager.white,),
                     SizedBox(width: 16,),
-                    Text("Language", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500,color: ColorsManager.white)),
+                    Text("Language", style: Theme.of(context).textTheme.titleMedium),
                   ],
                 ),
                 DropdownMenu(

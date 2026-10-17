@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Good Morning\nHere is Some News For You", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: ColorsManager.white),),
+          Text("Good Morning\nHere is Some News For You", style: Theme.of(context).textTheme.headlineMedium,),
           SizedBox(height: 16,),
           Expanded(
             child: ListView.separated(

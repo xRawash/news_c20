@@ -20,13 +20,13 @@ class ArticleItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(16)
           ,child: Image.network(article.urlToImage!,height: 200,width: double.infinity,fit: BoxFit.cover,)),
           SizedBox(height: 10,),
-          Text(article.title!,style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold, color: ColorsManager.white),),
+          Text(article.title!,style: Theme.of(context).textTheme.bodyLarge,),
           SizedBox(height: 10,),
           Row(
             children: [
-              Text("By: ${article.author!}",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500, color: Colors.grey),),
+              Text("By: ${article.author!}",style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.grey),),
               Spacer(),
-              Text(timeago.format(DateTime.parse(article.publishedAt!)),style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500, color: Colors.grey),),
+              Text(timeago.format(DateTime.parse(article.publishedAt!)),style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.grey),),
             ],
           )
         ],
