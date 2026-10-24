@@ -4,6 +4,16 @@ import 'package:news/core/colors_manager.dart';
 class ThemeManager {
   static final ThemeData light = ThemeData(
     scaffoldBackgroundColor: ColorsManager.white,
+    searchBarTheme: SearchBarThemeData(
+      backgroundColor: WidgetStateProperty.all(ColorsManager.white),
+      hintStyle: WidgetStateProperty.all(const TextStyle(color: Colors.grey, fontSize: 16)),
+      textStyle: WidgetStateProperty.all(const TextStyle(color: ColorsManager.black, fontSize: 16)),
+    ),
+    searchViewTheme: const SearchViewThemeData(
+      backgroundColor: ColorsManager.white,
+      headerTextStyle: TextStyle(color: ColorsManager.black, fontSize: 16),
+      headerHintStyle: TextStyle(color: Colors.grey, fontSize: 16),
+    ),
     appBarTheme: AppBarTheme(
       backgroundColor: ColorsManager.white,
       centerTitle: true,
@@ -59,6 +69,16 @@ class ThemeManager {
 
   static final ThemeData dark = ThemeData(
     scaffoldBackgroundColor: ColorsManager.black,
+    searchBarTheme: SearchBarThemeData(
+      backgroundColor: WidgetStateProperty.all(ColorsManager.black),
+      hintStyle: WidgetStateProperty.all(const TextStyle(color: Colors.white70, fontSize: 16)),
+      textStyle: WidgetStateProperty.all(const TextStyle(color: ColorsManager.white, fontSize: 16)),
+    ),
+    searchViewTheme: const SearchViewThemeData(
+      backgroundColor: ColorsManager.black,
+      headerTextStyle: TextStyle(color: ColorsManager.white, fontSize: 16),
+      headerHintStyle: TextStyle(color: Colors.white70, fontSize: 16),
+    ),
     appBarTheme: AppBarTheme(
       backgroundColor: ColorsManager.black,
       centerTitle: true,

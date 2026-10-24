@@ -3,6 +3,7 @@ import 'package:news/l10n/app_localizations.dart';
 import 'package:news/main_layout/drawer/custom_drawer.dart';
 import 'package:news/main_layout/home_screen/home_Screen.dart';
 import 'package:news/main_layout/news_screen/news_screen.dart';
+import 'package:news/main_layout/news_screen/news_search_delegate.dart';
 import 'package:news/models/category_model.dart';
 
 class MainScreen extends StatefulWidget {
@@ -33,7 +34,9 @@ class _MainScreenState extends State<MainScreen> {
       appBar: AppBar(
         title: Text(appBarTitle),
         centerTitle: true,
-        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.search))],
+        actions: [IconButton(onPressed: () {
+          showSearch(context: context, delegate: NewsSearchDelegate());
+        }, icon: const Icon(Icons.search))],
       ),
       drawer: CustomDrawer(onGoToHomeClicked: onGoToHomeClicked),
       body: selectedScreen,
@@ -51,7 +54,7 @@ class _MainScreenState extends State<MainScreen> {
   void onCategoryClicked(CategoryModel category) {
     setState(() {
       selectedCategory = category;
-      selectedScreen = NewsScreen();
+      selectedScreen = NewsScreen(selectedCategory: selectedCategory!,);
     });
   }
 }
