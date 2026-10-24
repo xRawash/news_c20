@@ -64,7 +64,23 @@ class ThemeManager {
         fontWeight: FontWeight.w500,
         color: ColorsManager.black,
       ),
+      bodySmall: TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+        color: ColorsManager.white,
+      )
     ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style:ElevatedButton.styleFrom(
+        backgroundColor: ColorsManager.white,
+        foregroundColor: ColorsManager.black,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        padding: EdgeInsets.symmetric(vertical: 16),
+      )
+
+    )
   );
 
   static final ThemeData dark = ThemeData(
@@ -129,6 +145,22 @@ class ThemeManager {
         fontWeight: FontWeight.w500,
         color: ColorsManager.white,
       ),
+        bodySmall: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+          color: ColorsManager.black,
+        )
     ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+          style:ElevatedButton.styleFrom(
+            backgroundColor: ColorsManager.black,
+            foregroundColor: ColorsManager.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            padding: EdgeInsets.symmetric(vertical: 16),
+          )
+
+      )
   );
 }
