@@ -101,7 +101,6 @@ class _NewsScreenState extends State<NewsScreen> {
                                     : ColorsManager.black,
                               ),
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
                                   ClipRRect(
@@ -117,7 +116,7 @@ class _NewsScreenState extends State<NewsScreen> {
                                         .textTheme
                                         .bodySmall,
                                   ),
-                                  SizedBox(height: 8,),
+                                  Spacer(),
                                   ElevatedButton(
                                     onPressed: () {
                                       _launchURL(articles[index].url!);
